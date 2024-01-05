@@ -2,6 +2,10 @@
 
 ## Ouput
 
+Github - https://github.com/rhen-quadros/Password-Generator
+
+Github Pages - https://rhen-quadros.github.io/Password-Generator/
+
 ![Final Output](/PassGen.gif)
 
 ## Instructions
