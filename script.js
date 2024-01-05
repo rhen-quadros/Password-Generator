@@ -88,20 +88,6 @@ var upperCasedCharacters = [
   "Z",
 ];
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
 // Function to prompt user for password options
 function getPasswordLength() {
   let passwordLength = prompt("Enter your desired length of password");
@@ -143,11 +129,20 @@ if (includeSpecialChars) {
 if (charset === "") {
   alert("Please select at least one character type");
 } else {
-  let password = "";
+  let generatedPassword = "";
 
   for (let i = 0; i < passwordLength; i++) {
     const randomIndex = Math.floor(Math.random() * charset.length);
-    password += charset.charAt(randomIndex);
+    generatedPassword += charset.charAt(randomIndex);
+  }
+
+  // Get references to the #generate element
+  var generateBtn = document.querySelector("#generate");
+
+  // Write generated password to the #password input
+  function writePassword() {
+    var passwordText = document.querySelector("#password");
+    passwordText.value = generatedPassword;
   }
 
   // Add event listener to generate button
